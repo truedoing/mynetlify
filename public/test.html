@@ -9,7 +9,7 @@
     <script>
       (async () => {
         try {
-          const response = await fetch('/.netlify/functions/get_coffee_blends');
+          const response = await fetch('/.netlify/functions/snakeAPI');
           const blends = await response.json();
           const blendsList = document.getElementById('blends');
           blends.forEach((blend) => {

@@ -1,6 +1,6 @@
 // netlify/functions/get_coffee_blends/get_coffee_blends.mjs
 import { neon } from '@neondatabase/serverless';
-
+import 'dotenv/config';
 export async function handler(event) {
   const sql = neon(process.env.DATABASE_URL);
 
