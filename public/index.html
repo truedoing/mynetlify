@@ -19,9 +19,17 @@
         const pokeBtn = document.getElementById('poke-btn')
 
         const responseText = document.getElementById('response-output')
+        var data ={}
+          const headers = {
+        'Content-Type': 'application/json'
+        };
 
         fetchBtn.addEventListener('click', async () => {
-           const response = await fetch('/.netlify/functions/hello-world')
+           const response = await fetch('/.netlify/functions/snakeAPI',{
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+          })
            .then(res => res.json())
             responseText.textContent = response.message
         })
