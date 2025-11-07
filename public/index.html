@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Up and Running with Serverless Functions</h1>
-    <button id="fetch-btn">Fetch</button>
+    <button id="fetch-btn">获取后台</button>
     <button id="poke-btn">poke</button>
 
     <p id="response-output">Response Placeholder</p>
@@ -25,9 +25,8 @@
         };
 
         fetchBtn.addEventListener('click', async () => {
-           const response = await fetch('/.netlify/functions/snakeAPI',{
+           const response = await fetch('https://zglnetlify.netlify.app/.netlify/functions/snakeAPI',{
             method: 'POST',
-            headers: headers,
             body: JSON.stringify(data)
           })
            .then(res => res.json())
